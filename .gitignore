@@ -1,0 +1,13 @@
+# DuckDB databases
+*.duckdb
+
+# Raw data (never commit)
+data_raw/
+
+# Python virtual environment
+.venv/
+__pycache__/
+
+# OS junk
+.DS_Store
+Thumbs.db
