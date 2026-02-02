@@ -1,4 +1,5 @@
 # DuckDB databases
+data/duckdb/
 *.duckdb
 
 # Raw data (never commit)

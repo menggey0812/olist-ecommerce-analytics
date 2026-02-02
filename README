@@ -1,0 +1,25 @@
+# Olist E-commerce Analytics (DuckDB + Power BI)
+
+End-to-end analytics project analysing e-commerce fulfilment, seller performance, and customer satisfaction using SQL (DuckDB) and Power BI.
+
+## Goals
+- Build a clean analytics dataset in DuckDB (raw → staging → marts)
+- Create a Power BI semantic model and dashboard
+- Demonstrate practical analytics engineering habits: reproducible setup, documented assumptions, and version control
+
+## Dataset
+Olist Brazilian E-Commerce Dataset (Kaggle). Download as ZIP and extract locally (not committed to Git).
+
+## Project structure
+- `sql/` SQL scripts (raw → staging → marts)
+- `docs/` Documentation (assumptions, KPIs, data dictionary)
+- `powerbi/` Power BI files
+- `notes/` Working notes (optional)
+- `data_raw/` Raw dataset (gitignored)
+- `data/duckdb/` DuckDB database file (gitignored)
+
+## Roadmap
+- Phase 1: Environment + DuckDB ingestion
+- Phase 2: Modelling (staging + marts)
+- Phase 3: Power BI dashboard
+- Phase 4: Polish (README, screenshots)
