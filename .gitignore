@@ -1,6 +1,9 @@
 # DuckDB databases
-data/duckdb/
 *.duckdb
+# DuckDB extras
+*.duckdb.wal
+*.duckdb.tmp
+*.duckdb.lock
 
 # Raw data (never commit)
 data_raw/
@@ -12,3 +15,8 @@ __pycache__/
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Editor / Tooling
+.vscode/
+*.log
+*.zip

@@ -6,10 +6,13 @@ con = duckdb.connect(DB_PATH)
 
 rows = con.execute("""
     select table_schema, table_name
-    from information_schema.tables
-    order by 1, 2
+    from information_schema.views
+    WHERE table_schema = 'staging'
+    order by table_name
 """).fetchall()
 
-print(rows)
+print("Staging views:")
+for row in rows:
+    print(row)
 
 con.close()
