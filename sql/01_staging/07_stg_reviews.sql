@@ -8,6 +8,6 @@ SELECT
     review_score::INTEGER                                  AS review_score,
     review_comment_title,
     review_comment_message,
-    review_creation_date::TIMESTAMP                        AS review_creation_ts,
-    review_answer_timestamp::TIMESTAMP                      AS review_answer_ts
+    CAST(review_creation_date AS TIMESTAMP)                        AS review_creation_ts,
+    CAST(review_answer_timestamp AS TIMESTAMP)                      AS review_answer_ts
 FROM raw.order_reviews;
