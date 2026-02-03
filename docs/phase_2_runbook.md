@@ -102,6 +102,11 @@ Checks implemented:
 - orders → customers foreign key
 - order_items → orders foreign key
 - payments → orders foreign key
+- seller primary key uniqueness
+- order_items → sellers foreign key
+- reviews → orders foreign key
+- product primary key uniqueness
+- order_items → products foreine key
 
 If any validation returns rows, the pipeline fails.
 
@@ -111,6 +116,7 @@ Created in sql/02_marts/:
 Dimensions
 - marts.dim_customers (1 row per customer)
 - marts.dim_products  (1 row per product)
+- marts.dim_sellers (1 row per seller)
 
 Facts
 - marts.fact_orders (1 row per order)
@@ -122,6 +128,19 @@ Purpose of marts:
 - stable schemas for BI tools
 - joins & aggregations already resolved
 
+ ---
+
+## Model Contract for Power BI
+
+DuckDB creates the dimension/fact tables; the relationships are configured in the Power BI semantic model after import.
+
+- marts.fact_orders.customer_id → marts.dim_customers.customer_id
+- marts.fact_order_items.order_id → marts.fact_orders.order_id
+- marts.fact_order_items.product_id → marts.dim_products.product_id
+- marts.fact_order_items.seller_id → marts.dim_sellers.seller_id
+
+This star schema supports customer, product, seller, and order-line analysis in Power BI.
+
 ---
 
 ## Verification
@@ -132,10 +151,6 @@ All calidations must pass
 
 - 99_check_staging.sql confirms staging views exist
 - 99_check_marts.sql confirms marts tables exist
-
-### Manual 
-- python scripts/check_db.py
-This lists schemas, tables, and views for sanity checking.
 
 ---
 

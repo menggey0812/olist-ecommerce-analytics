@@ -23,6 +23,12 @@ SQL_FILES = [
     Path("sql/01_staging/98_validations/03_validate_orders_customer_fk.sql"),
     Path("sql/01_staging/98_validations/04_validate_order_items_order_fk.sql"),
     Path("sql/01_staging/98_validations/05_validate_payments_order_fk.sql"),
+    Path("sql/01_staging/98_validations/06_validate_sellers_pk.sql"),
+    Path("sql/01_staging/98_validations/07_validate_order_items_seller_fk.sql"),
+    Path("sql/01_staging/98_validations/08_validate_reviews_orders_fk.sql"),
+    Path("sql/01_staging/98_validations/09_validate_products_pk.sql"),
+    Path("sql/01_staging/98_validations/10_validate_order_items_product_fk.sql"),
+
 
     # staging check
     Path("sql/01_staging/99_check_staging.sql"),
@@ -33,6 +39,10 @@ SQL_FILES = [
     Path("sql/02_marts/02_dim_products.sql"),
     Path("sql/02_marts/03_fact_orders.sql"),
     Path("sql/02_marts/04_fact_order_items.sql"),
+    Path("sql/02_marts/05_dim_sellers.sql"),
+
+     # marts check
+    Path("sql/02_marts/99_check_marts.sql"),
 ]
 
 con = duckdb.connect(str(DB_PATH))

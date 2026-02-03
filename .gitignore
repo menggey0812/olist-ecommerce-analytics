@@ -5,6 +5,9 @@
 *.duckdb.tmp
 *.duckdb.lock
 
+# Generated exports (parquet artifacts)
+data/exports/
+
 # Raw data (never commit)
 data_raw/
 
@@ -15,6 +18,7 @@ __pycache__/
 # OS junk
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Editor / Tooling
 .vscode/
