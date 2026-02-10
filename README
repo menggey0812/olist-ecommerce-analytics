@@ -22,5 +22,18 @@ Olist Brazilian E-Commerce Dataset (Kaggle). Download as ZIP and extract locally
 ## Roadmap
 - Phase 1: Environment + DuckDB ingestion
 - Phase 2: Modelling & Validation (staging + marts)
-- Phase 3: Power BI dashboard
+- Phase 3: Power BI semantic model (star schema, date table, measures)
 - Phase 4: Polish (README, screenshots)
+
+## Power BI Semantic Model
+The Power BI layer is built on top of DuckDB marts exported as Parquet files.
+This phase focuses on semantic correctness rather than visual design.
+
+Key elements:
+- Star schema with fact and dimension tables
+- Dedicated date dimension for time intelligence
+- Explicit relationships and filter directions
+- Model-level column hygiene (data types, summarization)
+- Centralised DAX measures table
+
+Visualisations are developed only after the semantic model is validated.
